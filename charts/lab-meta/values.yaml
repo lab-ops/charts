@@ -1,0 +1,5 @@
+namespaces:
+  - monitoring
+
+cloudflared:
+  enabled: false
