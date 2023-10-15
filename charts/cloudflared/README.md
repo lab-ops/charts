@@ -13,12 +13,13 @@ Deploys cloudflared
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| fullnameOverride | string | `""` |  |
-| image.pullPolicy | string | `"IfNotPresent"` |  |
+| fullnameOverride | string | `"cloudflared"` |  |
+| image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"cloudflare/cloudflared"` |  |
 | image.tag | string | `"2023.8.2"` |  |
 | imagePullSecrets | list | `[]` |  |
 | nameOverride | string | `""` |  |
+| namespace | string | `"cloudflared"` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podLabels | object | `{}` |  |
@@ -32,6 +33,8 @@ Deploys cloudflared
 | serviceAccount.automount | bool | `true` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
+| token | string | `""` | cloudflared plain text token |
+| tokenSecretName | string | `""` | existing secret that contains the cloudflared token |
 | tolerations | list | `[]` |  |
 | volumeMounts | list | `[]` |  |
 | volumes | list | `[]` |  |

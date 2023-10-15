@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "cloudflared.fullname" . }}
+  namespace: {{ .Values.namespace }}
   labels:
     {{- include "cloudflared.labels" . | nindent 4 }}
 spec:
@@ -36,6 +37,17 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          args: ["tunnel", "--no-autoupdate", "run", "--token=$(TOKEN)", "--metrics=0.0.0.0:9000"]
+          env:
+            - name: TOKEN
+              {{- if ne .Values.tokenSecretName "" }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.tokenSecretName }}
+                  key: token
+              {{- else }}
+              value: {{ .Values.token }}
+              {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

@@ -1,18 +1,16 @@
-# Default values for cloudflared.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+namespace: cloudflared
 
 replicaCount: 1
 
 image:
   repository: cloudflare/cloudflared
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "2023.8.2"
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: ""
+fullnameOverride: "cloudflared"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -80,3 +78,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# -- existing secret that contains the cloudflared token
+tokenSecretName: ""
+
+# -- cloudflared plain text token
+token: ""
