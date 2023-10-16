@@ -1,15 +1,12 @@
 tags:
-  networking: false
-  storage: true
+  networking: true
+  storage: false
   security: false
   apps: false
-  monitoring: false
 
-openebs:
-  enabled: false
-
+# Sub-chart values
 metallb:
-  enabled: false
+  enabled: true
   namespace: metallb-system
 
 cloudflared:
@@ -17,7 +14,7 @@ cloudflared:
   namespace: cloudflared
   tokenSecretName: cloudflare-api-token
 
-victoriametrics:
+victoriaMetrics:
   enable: false
   namespace: monitoring
 
@@ -41,9 +38,9 @@ certmanager:
       namespace: kube-system
   prometheus:
     servicemonitor:
-      enabled: true
+      enabled: false
 
-ingressnginx:
+ingressNginx:
   enabled: true
   namespace: ingress-nginx
   fullnameOverride: ingress-nginx
@@ -58,7 +55,7 @@ argocd:
 infisical:
   enabled: true
 
-arc:
+actionRunnerController:
   enabled: false
 
 cnpg:
