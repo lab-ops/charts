@@ -1,9 +1,80 @@
+{{- if .Values.certmanager.enabled }}
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ .Values.certmanager.namespace }}
+  labels:
+    {{- include "lab-meta.labels" $ | nindent 4 }}
+{{ end -}}
+
+
+{{- if .Values.cloudflared.enabled }}
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ .Values.cloudflared.namespace }}
+  labels:
+    {{- include "lab-meta.labels" $ | nindent 4 }}
+{{ end -}}
+
+{{- if .Values.ingressnginx.enabled }}
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ .Values.ingressnginx.namespace }}
+  labels:
+    {{- include "lab-meta.labels" $ | nindent 4 }}
+{{ end -}}
+
+{{- if .Values.victoriametrics.enabled -}}
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ .Values.victoriametrics.namespace }}
+  labels:
+    {{- include "lab-meta.labels" $ | nindent 4 }}
+{{ end -}}
+
+{{- if .Values.signoz.enabled -}}
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ .Values.signoz.namespace }}
+  labels:
+    {{- include "lab-meta.labels" $ | nindent 4 }}
+{{ end -}}
+
+{{- if .Values.cnpg.enabled -}}
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ .Values.cnpg.namespace }}
+  labels:
+    {{- include "lab-meta.labels" $ | nindent 4 }}
+{{ end -}}
+
+{{- if .Values.metallb.enabled -}}
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ .Values.metallb.namespace }}
+  labels:
+    {{- include "lab-meta.labels" $ | nindent 4 }}
+{{ end -}}
 
 {{- range .Values.namespaces -}}
+---
 kind: Namespace
 apiVersion: v1
 metadata:
   name: {{ . }}
   labels:
     {{- include "lab-meta.labels" $ | nindent 4 }}
-{{- end -}}
+{{ end -}}

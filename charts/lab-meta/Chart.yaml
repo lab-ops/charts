@@ -24,7 +24,41 @@ version: 0.1.0
 appVersion: "0.0.0"
 
 dependencies:
+  # Lap Ops Charts
   - name: cloudflared
+    alias: cloudflared
     version: "0.1.*"
-    repository: https://lab-ops.github.io/charts
+    # repository: https://lab-ops.github.io/charts
+    repository: file://../cloudflared
     condition: cloudflared.enabled
+    tags:
+      - networking
+  # Third Party Charts
+  - name: openebs
+    alias: openebs
+    version: "3.9.*"
+    repository: https://openebs.github.io/charts
+    condition: openebs.enabled
+    tags:
+      - storage
+  - name: cert-manager
+    alias: certmanager
+    version: "1.13.*"
+    repository: https://charts.jetstack.io
+    condition: certManage.enabled
+    tags:
+      - networking
+  - name: cloudnative-pg
+    alias: cnpg
+    version: "0.18.*"
+    repository: https://cloudnative-pg.github.io/charts
+    condition: cnpg.enabled
+    tags:
+      - apps
+  - name: metallb
+    alias: metallb
+    version: "0.13.*"
+    repository: https://metallb.github.io/metallb
+    condition: metallb.enabled
+    tags:
+      - networking
