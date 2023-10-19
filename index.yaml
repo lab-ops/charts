@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  cloudflared:
+  - apiVersion: v2
+    appVersion: 2023.8.2
+    created: "2023-10-19T06:01:39.909302669Z"
+    description: Deploys cloudflared
+    digest: 418c1a2ad7f2722c85aca0db40f5162e132ba0e233da71f10bd7c764ec10f858
+    name: cloudflared
+    type: application
+    urls:
+    - https://github.com/lab-ops/charts/releases/download/cloudflared-0.1.2/cloudflared-0.1.2.tgz
+    version: 0.1.2
+generated: "2023-10-19T06:01:39.909312669Z"
