@@ -9,10 +9,11 @@ Deploys cloudflared
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| autoscaling.enabled | bool | `false` |  |
-| autoscaling.maxReplicas | int | `100` |  |
-| autoscaling.minReplicas | int | `1` |  |
+| autoscaling.enabled | bool | `true` |  |
+| autoscaling.maxReplicas | int | `6` |  |
+| autoscaling.minReplicas | int | `3` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| autoscaling.targetMemoryUtilizationPercentage | int | `80` |  |
 | fullnameOverride | string | `"cloudflared"` |  |
 | image.pullPolicy | string | `"Always"` |  |
 | image.repository | string | `"cloudflare/cloudflared"` |  |
@@ -27,13 +28,13 @@ Deploys cloudflared
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
-| service.port | int | `80` |  |
+| service.port | int | `9000` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.automount | bool | `true` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
-| token | string | `""` | cloudflared plain text token |
+| token | string | `"eyJhIjoiZDdjMjdjYTIwOWI4MGM4OTdhMGZkNmFlZDhmMzhlYjIiLCJ0IjoiYmQxNDY0NDYtYmU4NC00ZDVmLWFjZDMtYmVkMmFjYjc2ZGQ4IiwicyI6Ik1EWmlNMkkzWVdNdFlqWXdZeTAwWkdZekxUbG1NREl0TkdGalpHWTNOR1ZqTnpReCJ9"` | cloudflared plain text token |
 | tokenSecretName | string | `""` | existing secret that contains the cloudflared token |
 | tolerations | list | `[]` |  |
 | volumeMounts | list | `[]` |  |
