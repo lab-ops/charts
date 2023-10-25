@@ -11,8 +11,6 @@
 
 ### Bug Fixes
 
-* **cloudflared:** add cloudflared namespace ([fe963f8](https://github.com/lab-ops/charts/commit/fe963f86a3a9da9e0ccf2d691633e5d85d9d91c8))
-* **cloudflared:** remove ingress resources ([e456008](https://github.com/lab-ops/charts/commit/e45600840c8db2f8470d8a9833eceb1384026332))
 * **cloudflared:** reset token ([30a69bd](https://github.com/lab-ops/charts/commit/30a69bd4834ce1c13493115295dd2baf9ef32c31))
 
 ## 1.0.0 (2023-10-19)
