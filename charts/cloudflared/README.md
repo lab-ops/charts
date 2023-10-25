@@ -34,7 +34,7 @@ Deploys cloudflared
 | serviceAccount.automount | bool | `true` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
-| token | string | `"eyJhIjoiZDdjMjdjYTIwOWI4MGM4OTdhMGZkNmFlZDhmMzhlYjIiLCJ0IjoiYmQxNDY0NDYtYmU4NC00ZDVmLWFjZDMtYmVkMmFjYjc2ZGQ4IiwicyI6Ik1EWmlNMkkzWVdNdFlqWXdZeTAwWkdZekxUbG1NREl0TkdGalpHWTNOR1ZqTnpReCJ9"` | cloudflared plain text token |
+| token | string | `""` | cloudflared plain text token |
 | tokenSecretName | string | `""` | existing secret that contains the cloudflared token |
 | tolerations | list | `[]` |  |
 | volumeMounts | list | `[]` |  |

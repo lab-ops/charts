@@ -83,4 +83,4 @@ affinity: {}
 tokenSecretName: ""
 
 # -- cloudflared plain text token
-token: "eyJhIjoiZDdjMjdjYTIwOWI4MGM4OTdhMGZkNmFlZDhmMzhlYjIiLCJ0IjoiYmQxNDY0NDYtYmU4NC00ZDVmLWFjZDMtYmVkMmFjYjc2ZGQ4IiwicyI6Ik1EWmlNMkkzWVdNdFlqWXdZeTAwWkdZekxUbG1NREl0TkdGalpHWTNOR1ZqTnpReCJ9"
+token: ""
